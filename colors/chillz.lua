@@ -1,1 +1,1 @@
-require("chillz").load()
+vim.cmd("lua require('chillz').setup()")
