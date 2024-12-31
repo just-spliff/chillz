@@ -14,7 +14,7 @@ M.setup = function(opts)
 	end
 
 	-- Zastosuj opcje konfiguracyjne (opcjonalnie)
-	-- require("chillz.config").apply(opts)
+	require("chillz.config").apply(opts)
 	config.apply_transparency()
 end
 
