@@ -1,7 +1,10 @@
 local M = {}
 
+local config = require("chillz.config")
+
 M.setup = function(colors)
-	local opts = M.options
+	local bg = config.transparent and "NONE" or colors.bg
+	local bg_alt = config.transparent and "NONE" or colors.bg_alt
 
 	return {
 		Normal = { fg = colors.fg, bg = colors.bg },
