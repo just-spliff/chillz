@@ -1,17 +1,14 @@
 local M = {}
-local colors = require("chillz.colors").palette
 
-M.setup = function()
+M.setup = function(colors)
 	return {
 		Normal = { fg = colors.fg, bg = colors.bg },
 		NormalFloat = { fg = colors.fg_alt, bg = colors.bg_alt },
-		Comment = { fg = colors.gray, style = "italic" },
-		Identifier = { fg = colors.main },
-		Statement = { fg = colors.main, style = "bold" },
-		Keyword = { fg = colors.accent },
-		Function = { fg = colors.main, style = "bold" },
+		Comment = { fg = colors.gray, gui = "italic" }, -- Zamiast "style", używamy "gui" (italic, bold, underline)
+		Keyword = { fg = colors.main, gui = "bold" },
+		Function = { fg = colors.accent, gui = "bold" },
 		String = { fg = colors.success },
-		Error = { fg = colors.error, style = "bold" },
+		Error = { fg = colors.error, gui = "bold" },
 		Warning = { fg = colors.warning },
 		Info = { fg = colors.info },
 		Highlight = { fg = colors.highlight, bg = colors.bg_alt },
