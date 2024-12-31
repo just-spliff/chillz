@@ -17,16 +17,25 @@ M.colors = {
 	teal = "#009688",
 }
 
+M.options = {
+	transparent = false, -- Tło nieprzezroczyste domyślnie
+}
+
 local function set_highlight(group, opts)
 	vim.api.nvim_set_hl(0, group, opts)
+end
+
+function M.setup(opts)
+	M.options = vim.tbl_extend("force", M.options, opts or {})
+	M.load()
 end
 
 function M.load()
 	local colors = M.colors
 
 	-- Podstawowe kolory
-	set_highlight("Normal", { fg = colors.fg, bg = colors.bg })
-	set_highlight("NormalNC", { fg = colors.fg_dim, bg = colors.bg_alt })
+	set_highlight("Normal", { fg = colors.fg, bg = opts.transparent and "NONE" or colors.bg })
+	set_highlight("NormalNC", { fg = colors.fg_dim, bg = opts.transparent and "NONE" or colors.bg_alt })
 	set_highlight("Comment", { fg = colors.fg_dim, italic = true })
 	set_highlight("Constant", { fg = colors.ice_blue })
 	set_highlight("Identifier", { fg = colors.arctic_green })
