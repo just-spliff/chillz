@@ -1,12 +1,17 @@
 local M = {}
 
 M.palette = {
-	bg = "#0f1e28", -- głęboki lodowcowy granat
-	fg = "#cdeff7", -- jasny, lodowaty błękit
-	accent = "#7ad0e5", -- kontrastowy błękit wody
-	highlight = "#eef9fb", -- śnieżnobiały na wyróżnienia
-	error = "#ff6b6b", -- odcień czerwieni dla błędów
-	warning = "#f3c623", -- jasny żółty dla ostrzeżeń
+	bg = "#0b1724", -- bardzo ciemny granat
+	bg_alt = "#102a42", -- ciemny niebieski (sekundarne tło)
+	fg = "#d8eefe", -- jasny, lodowy błękit
+	fg_alt = "#b5d6f2", -- pastelowy, zimny błękit
+	accent = "#58c4dd", -- jasny błękit
+	highlight = "#aef3ff", -- śnieżnobiały błękit
+	error = "#e95678", -- różowo-czerwień
+	warning = "#ffd670", -- jasny żółty
+	info = "#6acaff", -- subtelny błękit
+	success = "#81e3a5", -- delikatna zieleń
+	gray = "#748a98", -- neutralny szary
 }
 
 return M
