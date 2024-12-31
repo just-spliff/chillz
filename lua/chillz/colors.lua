@@ -15,6 +15,15 @@ M.palette = {
 	warning = "#ffd670", -- jasny żółty
 	info = "#6acaff", -- subtelny błękit
 	success = "#81e3a5", -- pastelowa zieleń
-	gray = "#748a98", -- neutralny szary}
+	gray = "#748a98", -- neutralny szary
+
+	-- Nowe kolory
+	keyword = "#aad2e3", -- chłodny błękit (słowa kluczowe)
+	variable = "#f4c2c2", -- jasny róż (zmienne)
+	function_name = "#8ff0da", -- pastelowy morski (nazwy funkcji)
+	string = "#d6f5e0", -- delikatny zielony (ciągi znaków)
+	constant = "#ffae57", -- jasny pomarańcz (stałe/liczby)
+	operator = "#7ddfff", -- intensywny błękit (operatory)
+	type = "#c5a3ff", -- fioletowy (typy danych)
 }
 return M
