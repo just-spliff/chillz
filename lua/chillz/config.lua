@@ -1,11 +1,18 @@
 local M = {}
 
-M.options = {
-	transparent = false, -- Czy używać transparentnego tła
-}
+-- Funkcja do zastosowania opcji konfiguracyjnych
+M.apply = function(opts)
+	opts = opts or {}
 
-M.setup = function(opts)
-	M.options = vim.tbl_extend("force", M.options, opts or {})
+	-- Przykład zastosowania opcji: ustawienie transparentności
+	if opts.transparent then
+		vim.cmd("hi Normal guibg=NONE")
+		vim.cmd("hi NormalNC guibg=NONE")
+		vim.cmd("hi VertSplit guibg=NONE")
+		vim.cmd("hi StatusLine guibg=NONE")
+	end
+
+	-- Możesz dodać inne opcje, np. ustawienie czcionki, przezroczystości itp.
 end
 
 return M
