@@ -52,30 +52,37 @@ M.setup = function(colors)
 		["@boolean"] = { fg = colors.polar_blue }, -- Booleans
 		["@float"] = { fg = colors.seafoam_green }, -- Floating-point numbers
 
+		-- Function and identifiers
 		["@function"] = { fg = colors.aurora_sky, bold = true }, -- Functions
 		["@function.call"] = { fg = colors.aurora_sky }, -- Function calls
 		["@function.builtin"] = { fg = colors.icy_cyan }, -- Built-in functions
 		["@function.macro"] = { fg = colors.frozen_purple }, -- Macro functions
 		["@parameter"] = { fg = colors.fg }, -- Parameters
 
+		-- Keywords
 		["@keyword"] = { fg = colors.icy_cyan, italic = true }, -- Keywords
 		["@keyword.function"] = { fg = colors.icy_cyan, italic = true }, -- Keywords in functions
 		["@keyword.operator"] = { fg = colors.polar_blue }, -- Operators
 		["@keyword.return"] = { fg = colors.icy_cyan, bold = true }, -- Return keywords
 
+		-- Types
 		["@type"] = { fg = colors.frozen_purple }, -- Types
 		["@type.builtin"] = { fg = colors.polar_blue }, -- Built-in types
 		["@type.qualifier"] = { fg = colors.frosted_steel }, -- Type qualifiers (e.g., `const`)
 
+		-- Namespaces and symbols
 		["@namespace"] = { fg = colors.fg_dim }, -- Namespaces
 		["@symbol"] = { fg = colors.fg }, -- Symbols
 
+		-- Fields and properties
 		["@field"] = { fg = colors.fg }, -- Fields
 		["@property"] = { fg = colors.fg }, -- Properties
 
+		-- Variables
 		["@variable"] = { fg = colors.fg }, -- Variables
 		["@variable.builtin"] = { fg = colors.frosted_steel }, -- Built-in variables
 
+		-- Text highlights
 		["@text"] = { fg = colors.fg }, -- Text
 		["@text.strong"] = { fg = colors.fg, bold = true }, -- Bold text
 		["@text.emphasis"] = { fg = colors.fg, italic = true }, -- Italic text
@@ -86,9 +93,14 @@ M.setup = function(colors)
 		["@text.uri"] = { fg = colors.polar_blue, underline = true }, -- URIs
 		["@text.math"] = { fg = colors.frozen_purple }, -- Math text
 
+		-- Tags and tag attributes
 		["@tag"] = { fg = colors.polar_blue }, -- Tags
 		["@tag.attribute"] = { fg = colors.frosted_steel }, -- Tag attributes
 		["@tag.delimiter"] = { fg = colors.fg_dim }, -- Tag delimiters
+
+		-- Handle smth.other_smth and similar
+		["@variable.other"] = { fg = colors.polar_blue }, -- First part (e.g., "smth")
+		["@variable.other.field"] = { fg = colors.frosted_steel }, -- Second part (e.g., "other_smth")
 	}
 end
 
