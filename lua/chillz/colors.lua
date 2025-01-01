@@ -1,29 +1,47 @@
 local M = {}
 
 M.palette = {
-	-- Backgrounds
-	bg = "#011423", -- Main background (dark, frosty)
-	bg_alt = "#122B3A", -- Alternative background (cooler and slightly lighter)
-	frost_shadow = "#082028", -- Dimmed background (muted)
-	highlight_glow = "#244B56", -- Highlight background (icy)
+	-- Background
+	bg = "#011423", -- Main background
+	bg_dark = "#0E1A1C", -- Darker background
+	bg_alt = "#1D3339", -- Alternative background
+	bg_highlight = "#245157", -- Highlighted background
+	bg_dim = "#0A1B20", -- Slightly dimmed background
 
-	-- Text
-	fg = "#D9FFFF", -- Main text color (crystal white)
-	soft_mint = "#A4DBE2", -- Alternative text color (soft mint)
-	frosted_steel = "#5C9CA3", -- Dimmed text color (muted steel)
-	glacier_light = "#F0FFFF", -- Very light text (glacial white)
+	-- Foreground
+	fg = "#E4FFFF", -- Main text
+	fg_dark = "#AEDFE5", -- Slightly dimmer text
+	fg_dim = "#5F8A8E", -- Dimmed text
+	fg_gutter = "#1F3942", -- Gutter text
 
 	-- Accents
-	polar_blue = "#6FE7E8", -- Main accent color (vivid polar blue)
-	bright_ice = "#47FF9C", -- Main accent color (bright frosty green)
-	aurora_sky = "#9EEFEF", -- Soft icy blue
-	seafoam_green = "#3DDCD2", -- Subtle frosty green
+	mint_blue = "#6FE7E8", -- Primary accent
+	mint_blue_dark = "#49C4C7", -- Darker mint blue
+	ice_blue = "#ACFFFF", -- Bright icy blue
+	cyan = "#3FB8C8", -- Cyan
+	teal = "#3DDCD2", -- Teal
+	green = "#47FF9C", -- Bright green
+	green_dark = "#3AD69C", -- Darker green
+	yellow = "#F2AF5F", -- Yellow-orange tone
+	orange = "#F29367", -- Orange
 
-	-- Contrasts
-	icy_cyan = "#37BAC6", -- Deep icy cyan
-	frozen_purple = "#8B97E5", -- Cool frosty purple
-	winter_rose = "#F97068", -- Winter rose (soft magenta)
-	chilled_pink = "#F96E2A", -- Frosty pink (soft contrast)
+	-- Reds and Purples
+	red = "#F25C54", -- Red
+	red_dark = "#D2443E", -- Darker red
+	magenta = "#E08DFF", -- Magenta
+	magenta_dark = "#C77BDB", -- Darker magenta
+	purple = "#A485F2", -- Purple
+
+	-- Blues
+	blue = "#6FE7E8", -- Bright blue
+	blue_light = "#ACFFFF", -- Lighter blue
+	blue_dark = "#49C4C7", -- Darker blue
+	blue_dim = "#3FB8C8", -- Dimmed blue
+	blue_gutter = "#214657", -- Gutter blue
+
+	-- Neutrals
+	comment = "#5F8A8E", -- Neutral gray (for comments)
+	terminal_black = "#01191E", -- Black (for terminal backgrounds)
 }
 
 return M

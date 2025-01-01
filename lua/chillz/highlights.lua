@@ -8,98 +8,88 @@ M.setup = function(colors)
 	return {
 		-- Background and text
 		Normal = { fg = colors.fg, bg = bg_color },
-		Comment = { fg = colors.frosted_steel, italic = true },
-		CursorLine = { bg = colors.highlight_glow },
-		CursorLineNr = { fg = colors.polar_blue, bold = true },
-		LineNr = { fg = colors.frosted_steel },
+		Comment = { fg = colors.comment, italic = true },
+		CursorLine = { bg = colors.bg_highlight },
+		CursorLineNr = { fg = colors.mint_blue, bold = true },
+		LineNr = { fg = colors.fg_dim },
 		Visual = { bg = colors.bg_alt },
+		VisualNOS = { bg = colors.bg_dim },
+		NormalFloat = { bg = colors.bg_alt },
+		FloatBorder = { fg = colors.fg_dim, bg = colors.bg_alt },
+		Search = { bg = colors.blue_dim, fg = colors.bg },
+		IncSearch = { bg = colors.mint_blue_dark, fg = colors.bg },
+		MatchParen = { fg = colors.blue, underline = true },
+		ColorColumn = { bg = colors.bg_dim },
 
-		-- Syntax (General)
-		Identifier = { fg = colors.polar_blue },
-		Function = { fg = colors.aurora_sky, bold = true },
-		Keyword = { fg = colors.icy_cyan, italic = true },
-		String = { fg = colors.bright_ice },
-		Constant = { fg = colors.seafoam_green },
-		Type = { fg = colors.frozen_purple },
-		Special = { fg = colors.winter_rose },
-		WarningMsg = { fg = colors.chilled_pink, bold = true },
-		ErrorMsg = { fg = colors.frozen_purple, bold = true },
+		-- Syntax Highlights
+		Identifier = { fg = colors.mint_blue },
+		Function = { fg = colors.ice_blue, bold = true },
+		Keyword = { fg = colors.cyan, italic = true },
+		String = { fg = colors.green },
+		Constant = { fg = colors.teal },
+		Type = { fg = colors.purple },
+		Structure = { fg = colors.blue_dark },
+		StorageClass = { fg = colors.red },
+		Operator = { fg = colors.blue_light },
+		Character = { fg = colors.green_dark },
+		Number = { fg = colors.orange },
+		Boolean = { fg = colors.red_dark, bold = true },
+		Float = { fg = colors.yellow },
 
-		-- Statusline and other UI elements
-		StatusLine = { fg = colors.fg, bg = colors.bg_alt },
-		StatusLineNC = { fg = colors.frosted_steel, bg = colors.frost_shadow },
+		-- UI Highlights
+		StatusLine = { fg = colors.fg, bg = colors.bg_dark },
+		StatusLineNC = { fg = colors.fg_dim, bg = colors.bg_dark },
 		Pmenu = { fg = colors.fg, bg = colors.bg_alt },
-		PmenuSel = { fg = colors.bg, bg = colors.polar_blue },
-		TabLine = { fg = colors.frosted_steel, bg = colors.frost_shadow },
+		PmenuSel = { fg = colors.bg, bg = colors.mint_blue },
+		TabLine = { fg = colors.comment, bg = colors.bg_dim },
 		TabLineSel = { fg = colors.fg, bg = colors.bg_alt },
+		TabLineFill = { bg = colors.bg },
 
-		-- Diff highlighting (gradients)
-		DiffAdd = { fg = colors.seafoam_green },
-		DiffChange = { fg = colors.polar_blue },
-		DiffDelete = { fg = colors.chilled_pink },
-		DiffText = { fg = colors.aurora_sky },
+		-- Diagnostics
+		DiagnosticError = { fg = colors.red },
+		DiagnosticWarn = { fg = colors.yellow },
+		DiagnosticInfo = { fg = colors.blue },
+		DiagnosticHint = { fg = colors.cyan },
+		DiagnosticUnderlineError = { undercurl = true, sp = colors.red },
+		DiagnosticUnderlineWarn = { undercurl = true, sp = colors.yellow },
+		DiagnosticUnderlineInfo = { undercurl = true, sp = colors.blue },
+		DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan },
 
-		-- Tree-sitter highlights (Expanded)
-		["@comment"] = { fg = colors.frosted_steel, italic = true }, -- Comments
-		["@punctuation"] = { fg = colors.fg }, -- Punctuation (commas, colons, etc.)
-		["@constant"] = { fg = colors.seafoam_green }, -- Constants
-		["@constant.builtin"] = { fg = colors.bright_ice }, -- Built-in constants
-		["@constant.macro"] = { fg = colors.frozen_purple }, -- Macros
-		["@string"] = { fg = colors.bright_ice }, -- Strings
-		["@string.escape"] = { fg = colors.winter_rose, bold = true }, -- Escape sequences
-		["@character"] = { fg = colors.bright_ice }, -- Characters
-		["@number"] = { fg = colors.seafoam_green }, -- Numbers
-		["@boolean"] = { fg = colors.polar_blue }, -- Booleans
-		["@float"] = { fg = colors.seafoam_green }, -- Floating-point numbers
+		-- Tree-sitter Highlights
+		["@comment"] = { fg = colors.comment, italic = true },
+		["@punctuation"] = { fg = colors.fg_dim },
+		["@constant"] = { fg = colors.teal },
+		["@constant.builtin"] = { fg = colors.green_dark },
+		["@constant.macro"] = { fg = colors.blue_dark },
+		["@string"] = { fg = colors.green },
+		["@string.escape"] = { fg = colors.purple, bold = true },
+		["@character"] = { fg = colors.green_dark },
+		["@number"] = { fg = colors.orange },
+		["@boolean"] = { fg = colors.red_dark, bold = true },
+		["@float"] = { fg = colors.yellow },
+		["@type"] = { fg = colors.purple },
+		["@type.builtin"] = { fg = colors.blue },
+		["@function"] = { fg = colors.ice_blue, bold = true },
+		["@function.call"] = { fg = colors.mint_blue },
+		["@function.builtin"] = { fg = colors.cyan },
+		["@function.macro"] = { fg = colors.purple },
+		["@parameter"] = { fg = colors.fg_dim },
+		["@keyword"] = { fg = colors.cyan, italic = true },
+		["@keyword.function"] = { fg = colors.blue, italic = true },
+		["@keyword.operator"] = { fg = colors.blue_light },
+		["@variable"] = { fg = colors.fg },
+		["@variable.builtin"] = { fg = colors.fg_dim },
 
-		-- TypeScript Specific Highlighting
-		["@type"] = { fg = colors.frozen_purple }, -- Types (e.g., `string`, `number`)
-		["@type.builtin"] = { fg = colors.polar_blue }, -- Built-in types (e.g., `any`, `void`)
-		["@type.qualifier"] = { fg = colors.frosted_steel }, -- Type qualifiers (e.g., `const`, `readonly`)
-		["@type.interface"] = { fg = colors.icy_cyan, bold = true }, -- Interfaces (e.g., `interface MyInterface`)
-		["@type.class"] = { fg = colors.aurora_sky, bold = true }, -- Classes (e.g., `class MyClass`)
-		["@type.enum"] = { fg = colors.frozen_purple, bold = true }, -- Enums
-		["@type.parameter"] = { fg = colors.frosted_steel }, -- Function parameters (e.g., `x: number`)
+		-- Diff Highlights
+		DiffAdd = { fg = colors.green, bg = colors.bg_dim },
+		DiffChange = { fg = colors.blue_dark, bg = colors.bg_dim },
+		DiffDelete = { fg = colors.red, bg = colors.bg_dim },
+		DiffText = { fg = colors.blue, bg = colors.bg_dim },
 
-		-- Functions and Methods
-		["@function"] = { fg = colors.aurora_sky, bold = true }, -- Functions
-		["@function.call"] = { fg = colors.aurora_sky }, -- Function calls
-		["@function.builtin"] = { fg = colors.icy_cyan }, -- Built-in functions
-		["@function.macro"] = { fg = colors.frozen_purple }, -- Macro functions
-		["@function.method"] = { fg = colors.polar_blue }, -- Methods inside classes
-		["@parameter"] = { fg = colors.fg }, -- Parameters in functions
-
-		-- Keywords
-		["@keyword"] = { fg = colors.icy_cyan, italic = true }, -- Keywords
-		["@keyword.function"] = { fg = colors.icy_cyan, italic = true }, -- Keywords in functions
-		["@keyword.operator"] = { fg = colors.polar_blue }, -- Operators
-		["@keyword.return"] = { fg = colors.icy_cyan, bold = true }, -- Return keywords
-
-		-- Variables
-		["@variable"] = { fg = colors.fg }, -- Variables
-		["@variable.builtin"] = { fg = colors.frosted_steel }, -- Built-in variables
-		["@variable.other"] = { fg = colors.polar_blue }, -- First part (e.g., "smth")
-		["@variable.other.field"] = { fg = colors.frosted_steel }, -- Second part (e.g., "other_smth")
-
-		-- Text Highlights
-		["@text"] = { fg = colors.fg }, -- Text
-		["@text.strong"] = { fg = colors.fg, bold = true }, -- Bold text
-		["@text.emphasis"] = { fg = colors.fg, italic = true }, -- Italic text
-		["@text.underline"] = { fg = colors.fg, underline = true }, -- Underlined text
-		["@text.strike"] = { fg = colors.fg, strikethrough = true }, -- Strikethrough text
-		["@text.title"] = { fg = colors.fg, bold = true }, -- Titles
-		["@text.literal"] = { fg = colors.bright_ice }, -- Literal text
-		["@text.uri"] = { fg = colors.polar_blue, underline = true }, -- URIs
-		["@text.math"] = { fg = colors.frozen_purple }, -- Math text
-
-		-- Tags and tag attributes
-		["@tag"] = { fg = colors.polar_blue }, -- Tags
-		["@tag.attribute"] = { fg = colors.frosted_steel }, -- Tag attributes
-		["@tag.delimiter"] = { fg = colors.fg_dim }, -- Tag delimiters
-
-		-- Additional elements for TypeScript
-		["@variable.other.ts"] = { fg = colors.polar_blue }, -- Variables in TypeScript
-		["@variable.other.ts.field"] = { fg = colors.frosted_steel }, -- Fields in TypeScript
+		-- LSP-related
+		LspReferenceText = { bg = colors.bg_highlight },
+		LspReferenceRead = { bg = colors.bg_highlight },
+		LspReferenceWrite = { bg = colors.bg_highlight, bold = true },
 	}
 end
 
