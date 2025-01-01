@@ -51,7 +51,7 @@ telescope.setup({
 telescope.load_extension("fzf")
 
 -- Ustawienie kolorów dla Telescope
-vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE", fg = colors.fg }) -- Tło przezroczyste
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = colors.bg, fg = colors.fg }) -- Tło przezroczyste
 vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = colors.bg_alt, fg = colors.fg }) -- Tło paska wejściowego
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = colors.bg_alt, fg = colors.bg_alt }) -- Obramowanie paska wejściowego
 vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = colors.bg_highlight, fg = colors.fg }) -- Tło podglądu

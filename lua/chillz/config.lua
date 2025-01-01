@@ -17,8 +17,6 @@ M.apply_transparency = function()
 		vim.cmd("hi StatusLine guibg=NONE")
 		vim.cmd("hi StatusLineNC guibg=NONE")
 	end
-	vim.cmd([[hi Normal guibg=NONE]])
-	vim.cmd([[hi TelescopeNormal guibg=NONE]]) -- Tło w telescope
 end
 
 return M
