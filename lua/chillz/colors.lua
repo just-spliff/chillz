@@ -22,8 +22,8 @@ M.palette = {
 	-- Contrasts
 	icy_cyan = "#37BAC6", -- Deep icy cyan
 	frozen_purple = "#8B97E5", -- Cool frosty purple
-	winter_rose = "#CE9FFF", -- Winter rose (soft magenta)
-	chilled_pink = "#FFB8C5", -- Frosty pink (soft contrast)
+	winter_rose = "#FF3366", -- Winter rose (soft magenta)
+	chilled_pink = "#F39237", -- Frosty pink (soft contrast)
 }
 
 return M
