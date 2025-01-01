@@ -15,7 +15,7 @@ telescope.setup({
 			prompt_position = "top", -- Pozycja paska wejściowego
 			width = 0.8, -- Szerokość okna
 		},
-		winblend = 15, -- Przezroczystość okna
+		winblend = 0, -- Przezroczystość okna
 		color_devicons = true, -- Kolory ikon
 		mappings = {
 			i = {
