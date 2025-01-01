@@ -14,7 +14,7 @@ M.setup = function(colors)
 		LineNr = { fg = colors.frosted_steel },
 		Visual = { bg = colors.bg_alt },
 
-		-- Syntax
+		-- Syntax (General)
 		Identifier = { fg = colors.polar_blue },
 		Function = { fg = colors.aurora_sky, bold = true },
 		Keyword = { fg = colors.icy_cyan, italic = true },
@@ -39,9 +39,9 @@ M.setup = function(colors)
 		DiffDelete = { fg = colors.chilled_pink },
 		DiffText = { fg = colors.aurora_sky },
 
-		-- Tree-sitter highlights
+		-- Tree-sitter highlights (Expanded)
 		["@comment"] = { fg = colors.frosted_steel, italic = true }, -- Comments
-		["@punctuation"] = { fg = colors.fg }, -- Punctuation
+		["@punctuation"] = { fg = colors.fg }, -- Punctuation (commas, colons, etc.)
 		["@constant"] = { fg = colors.seafoam_green }, -- Constants
 		["@constant.builtin"] = { fg = colors.bright_ice }, -- Built-in constants
 		["@constant.macro"] = { fg = colors.frozen_purple }, -- Macros
@@ -52,12 +52,22 @@ M.setup = function(colors)
 		["@boolean"] = { fg = colors.polar_blue }, -- Booleans
 		["@float"] = { fg = colors.seafoam_green }, -- Floating-point numbers
 
-		-- Function and identifiers
+		-- TypeScript Specific Highlighting
+		["@type"] = { fg = colors.frozen_purple }, -- Types (e.g., `string`, `number`)
+		["@type.builtin"] = { fg = colors.polar_blue }, -- Built-in types (e.g., `any`, `void`)
+		["@type.qualifier"] = { fg = colors.frosted_steel }, -- Type qualifiers (e.g., `const`, `readonly`)
+		["@type.interface"] = { fg = colors.icy_cyan, bold = true }, -- Interfaces (e.g., `interface MyInterface`)
+		["@type.class"] = { fg = colors.aurora_sky, bold = true }, -- Classes (e.g., `class MyClass`)
+		["@type.enum"] = { fg = colors.frozen_purple, bold = true }, -- Enums
+		["@type.parameter"] = { fg = colors.frosted_steel }, -- Function parameters (e.g., `x: number`)
+
+		-- Functions and Methods
 		["@function"] = { fg = colors.aurora_sky, bold = true }, -- Functions
 		["@function.call"] = { fg = colors.aurora_sky }, -- Function calls
 		["@function.builtin"] = { fg = colors.icy_cyan }, -- Built-in functions
 		["@function.macro"] = { fg = colors.frozen_purple }, -- Macro functions
-		["@parameter"] = { fg = colors.fg }, -- Parameters
+		["@function.method"] = { fg = colors.polar_blue }, -- Methods inside classes
+		["@parameter"] = { fg = colors.fg }, -- Parameters in functions
 
 		-- Keywords
 		["@keyword"] = { fg = colors.icy_cyan, italic = true }, -- Keywords
@@ -65,24 +75,13 @@ M.setup = function(colors)
 		["@keyword.operator"] = { fg = colors.polar_blue }, -- Operators
 		["@keyword.return"] = { fg = colors.icy_cyan, bold = true }, -- Return keywords
 
-		-- Types
-		["@type"] = { fg = colors.frozen_purple }, -- Types
-		["@type.builtin"] = { fg = colors.polar_blue }, -- Built-in types
-		["@type.qualifier"] = { fg = colors.frosted_steel }, -- Type qualifiers (e.g., `const`)
-
-		-- Namespaces and symbols
-		["@namespace"] = { fg = colors.fg_dim }, -- Namespaces
-		["@symbol"] = { fg = colors.fg }, -- Symbols
-
-		-- Fields and properties
-		["@field"] = { fg = colors.fg }, -- Fields
-		["@property"] = { fg = colors.fg }, -- Properties
-
 		-- Variables
 		["@variable"] = { fg = colors.fg }, -- Variables
 		["@variable.builtin"] = { fg = colors.frosted_steel }, -- Built-in variables
+		["@variable.other"] = { fg = colors.polar_blue }, -- First part (e.g., "smth")
+		["@variable.other.field"] = { fg = colors.frosted_steel }, -- Second part (e.g., "other_smth")
 
-		-- Text highlights
+		-- Text Highlights
 		["@text"] = { fg = colors.fg }, -- Text
 		["@text.strong"] = { fg = colors.fg, bold = true }, -- Bold text
 		["@text.emphasis"] = { fg = colors.fg, italic = true }, -- Italic text
@@ -98,9 +97,9 @@ M.setup = function(colors)
 		["@tag.attribute"] = { fg = colors.frosted_steel }, -- Tag attributes
 		["@tag.delimiter"] = { fg = colors.fg_dim }, -- Tag delimiters
 
-		-- Handle smth.other_smth and similar
-		["@variable.other"] = { fg = colors.polar_blue }, -- First part (e.g., "smth")
-		["@variable.other.field"] = { fg = colors.frosted_steel }, -- Second part (e.g., "other_smth")
+		-- Additional elements for TypeScript
+		["@variable.other.ts"] = { fg = colors.polar_blue }, -- Variables in TypeScript
+		["@variable.other.ts.field"] = { fg = colors.frosted_steel }, -- Fields in TypeScript
 	}
 end
 
