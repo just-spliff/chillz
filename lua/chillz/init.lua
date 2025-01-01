@@ -15,8 +15,6 @@ M.setup = function(opts)
 
 	-- Zastosuj opcje konfiguracyjne (opcjonalnie)
 	require("chillz.config").apply(opts)
-	require("chillz.integrations.telescope")
-	require("chillz.integrations.lualine")
 
 	config.apply_transparency()
 end
