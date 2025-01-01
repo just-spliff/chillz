@@ -15,7 +15,7 @@ M.setup = function(opts)
 
 	-- Zastosuj opcje konfiguracyjne (opcjonalnie)
 	require("chillz.config").apply(opts)
-	require("chillz.integrations.treesitter")
+	require("chillz.integrations.telescope")
 
 	config.apply_transparency()
 end
