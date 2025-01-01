@@ -15,11 +15,13 @@ telescope.setup({
 			prompt_position = "top", -- Pozycja paska wejściowego
 			width = 0.8, -- Szerokość okna
 		},
-		winblend = 10, -- Przezroczystość okna
+		winblend = 15, -- Przezroczystość okna
 		color_devicons = true, -- Kolory ikon
 		mappings = {
 			i = {
 				["<Esc>"] = actions.close,
+				["<C-j>"] = actions.move_selection_next, -- Nawigacja w dół
+				["<C-k>"] = actions.move_selection_previous, -- Nawigacja w górę
 			},
 		},
 		path_display = { "smart" },
@@ -49,12 +51,12 @@ telescope.setup({
 telescope.load_extension("fzf")
 
 -- Ustawienie kolorów dla Telescope
-vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = colors.bg, fg = colors.fg }) -- Tło i tekst
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE", fg = colors.fg }) -- Tło przezroczyste
 vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = colors.bg_alt, fg = colors.fg }) -- Tło paska wejściowego
 vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = colors.bg_alt, fg = colors.bg_alt }) -- Obramowanie paska wejściowego
 vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = colors.bg_highlight, fg = colors.fg }) -- Tło podglądu
 vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = colors.bg_highlight, fg = colors.bg_highlight }) -- Obramowanie podglądu
-vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = colors.bg, fg = colors.fg }) -- Tło wyników
+vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "NONE", fg = colors.fg }) -- Tło wyników
 vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = colors.bg, fg = colors.bg }) -- Obramowanie wyników
 vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = colors.mint_blue, fg = colors.bg }) -- Wyróżniony wynik
 vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = colors.success }) -- Wskaźnik na wyróżniony wynik
