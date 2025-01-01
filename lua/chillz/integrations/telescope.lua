@@ -10,10 +10,10 @@ telescope.setup({
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		sorting_strategy = "ascending",
-		layout_strategy = "horizontal",
+		layout_strategy = "horizontal", -- Użyj innego układu (horizontal)
 		layout_config = {
-			preview_width = 0.6,
-			prompt_position = "top",
+			prompt_position = "top", -- Pozycja paska wejściowego
+			width = 0.8, -- Szerokość okna
 		},
 		color_devicons = true,
 		mappings = {
