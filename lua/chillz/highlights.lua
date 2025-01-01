@@ -1,62 +1,63 @@
-local colors = require("chillz.colors").palette
-
 local M = {}
 
-function M.setup()
-	return {
-		-- Podstawowe grupy UI
-		Normal = { fg = colors.fg, bg = colors.bg },
-		NormalNC = { fg = colors.fg_dim, bg = colors.bg },
+M.setup = function(colors)
+	local bg_color = colors.bg
+	local highlights = {
+		-- General UI
+		Normal = { fg = colors.fg, bg = bg_color },
+		Comment = { fg = colors.comment, italic = true },
 		CursorLine = { bg = colors.bg_highlight },
+		CursorLineNr = { fg = colors.mint_blue, bold = true },
+		LineNr = { fg = colors.fg_dim },
 		Visual = { bg = colors.bg_alt },
-		LineNr = { fg = colors.fg_gutter },
-		CursorLineNr = { fg = colors.mint_blue, style = "bold" },
+		MatchParen = { bg = colors.bg_highlight, bold = true },
+		Pmenu = { fg = colors.fg, bg = colors.bg_alt },
+		PmenuSel = { fg = colors.bg, bg = colors.mint_blue_dark },
 		StatusLine = { fg = colors.fg, bg = colors.bg_alt },
 		StatusLineNC = { fg = colors.fg_dim, bg = colors.bg_dim },
-		Pmenu = { fg = colors.fg, bg = colors.bg_dark },
-		PmenuSel = { fg = colors.bg, bg = colors.mint_blue },
-		PmenuThumb = { bg = colors.fg_dim },
-		WinSeparator = { fg = colors.bg_highlight },
+		TabLine = { fg = colors.fg_dim, bg = colors.bg_dim },
+		TabLineSel = { fg = colors.fg, bg = colors.bg_alt },
+		TabLineFill = { bg = colors.bg_dim },
 
-		-- Fallbackowe grupy składni
-		Comment = { fg = colors.comment, style = "italic" },
-		Constant = { fg = colors.blue_light },
-		String = { fg = colors.green },
-		Character = { fg = colors.teal },
-		Number = { fg = colors.blue_dim },
-		Boolean = { fg = colors.mint_blue_dark, style = "bold" },
-		Float = { fg = colors.cyan },
-		Identifier = { fg = colors.fg },
-		Function = { fg = colors.teal, style = "italic" },
-		Statement = { fg = colors.purple_dark },
-		Conditional = { fg = colors.purple, style = "bold" },
-		Repeat = { fg = colors.purple },
-		Label = { fg = colors.cyan },
-		Operator = { fg = colors.fg_dark },
-		Keyword = { fg = colors.purple, style = "bold" },
-		Exception = { fg = colors.magenta },
+		-- Syntax Highlighting
+		["@keyword"] = { fg = colors.purple, bold = true },
+		["@keyword.return"] = { fg = colors.purple_dark, bold = true },
+		["@string"] = { fg = colors.green },
+		["@string.escape"] = { fg = colors.mint_blue, bold = true },
+		["@function"] = { fg = colors.blue, bold = true },
+		["@function.call"] = { fg = colors.blue_light },
+		["@method"] = { fg = colors.cyan },
+		["@method.call"] = { fg = colors.blue_dim },
+		["@constant"] = { fg = colors.teal },
+		["@type"] = { fg = colors.mint_blue_dark },
+		["@variable"] = { fg = colors.fg },
+		["@property"] = { fg = colors.fg_dark },
+		["@field"] = { fg = colors.cyan },
+		["@number"] = { fg = colors.yellow },
+		["@tag"] = { fg = colors.mint_blue },
+		["@tag.attribute"] = { fg = colors.blue_dim },
+		["@attribute"] = { fg = colors.blue_dark },
+		["@namespace"] = { fg = colors.purple },
 
-		-- Typy
-		PreProc = { fg = colors.blue },
-		Include = { fg = colors.mint_blue },
-		Define = { fg = colors.cyan },
-		Title = { fg = colors.mint_blue, style = "bold" },
-		Type = { fg = colors.teal, style = "bold" },
-		StorageClass = { fg = colors.purple_dark },
-		Structure = { fg = colors.purple },
-		Typedef = { fg = colors.mint_blue_dark },
+		-- Diagnostics
+		DiagnosticError = { fg = colors.magenta },
+		DiagnosticWarn = { fg = colors.purple_dark },
+		DiagnosticInfo = { fg = colors.mint_blue_dark },
+		DiagnosticHint = { fg = colors.teal },
 
-		-- Podświetlenie błędów i ostrzeżeń
-		Error = { fg = colors.magenta, bg = colors.bg, style = "bold" },
-		Warning = { fg = colors.yellow, style = "italic" },
-		Info = { fg = colors.mint_blue },
-		Hint = { fg = colors.green },
+		-- Diff
+		DiffAdd = { fg = colors.green, bg = colors.bg_dim },
+		DiffChange = { fg = colors.blue, bg = colors.bg_dim },
+		DiffDelete = { fg = colors.purple_dark, bg = colors.bg_dim },
+		DiffText = { fg = colors.blue_light, bg = colors.bg_highlight },
 
-		-- Podświetlenie wyszukiwania
-		Search = { fg = colors.bg, bg = colors.mint_blue },
-		IncSearch = { fg = colors.bg, bg = colors.teal },
-		WildMenu = { fg = colors.fg, bg = colors.bg_highlight },
+		-- Git
+		GitSignsAdd = { fg = colors.green },
+		GitSignsChange = { fg = colors.blue },
+		GitSignsDelete = { fg = colors.purple_dark },
 	}
+
+	return highlights
 end
 
 return M
