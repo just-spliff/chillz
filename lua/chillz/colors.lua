@@ -1,28 +1,41 @@
 local M = {}
 
 M.palette = {
-	bg = "#06141a", -- bardzo ciemny morski granat (tło główne)
-	bg_alt = "#0b1f27", -- nieco jaśniejszy morski granat (sekundarne tło)
-	fg = "#e4f9ff", -- jasny lodowy błękit (tekst główny)
-	fg_alt = "#c7e7f5", -- pastelowy błękit (tekst pomocniczy)
-	main = "#98fbcb", -- miętowy błękit (główny akcent)
-	accent = "#59d8e0", -- jasny morski błękit (dodatkowy akcent)
-	highlight = "#aef6ff", -- świeży lodowy błękit (podświetlenia)
+	-- Tło
+	bg = "#162326", -- Tło główne (ciemny, mroźny)
+	bg_alt = "#1D3339", -- Alternatywne tło (lekko jaśniejsze)
+	bg_dim = "#0E1A1C", -- Przyciemnione tło
+	bg_highlight = "#245157", -- Tło podświetlenia (nasycone)
 
-	-- Dodatkowe kolory
-	error = "#fa5f76", -- różowo-czerwień (błędy)
-	warning = "#ffd97a", -- świeży jasny żółty (ostrzeżenia)
-	info = "#70eaff", -- intensywny błękit (informacje)
-	success = "#88f4ba", -- pastelowa zieleń (sukcesy)
-	gray = "#7a9ca7", -- subtelny szary-niebieski (komentarze)
+	-- Tekst
+	fg = "#E4FFFF", -- Główny kolor tekstu (bardzo jasny, chłodny)
+	fg_alt = "#AEDFE5", -- Alternatywny kolor tekstu (miętowy)
+	fg_dim = "#5F8A8E", -- Przyciemniony tekst (spokojny miętowy)
+	fg_light = "#F0FFFF", -- Bardzo jasny tekst (prawie biały)
 
-	-- Nowe kolory dla lepszej różnorodności
-	keyword = "#9ce8df", -- miętowy akcent dla słów kluczowych
-	variable = "#ffc3bf", -- łagodny róż (zmienne)
-	function_name = "#7de3d3", -- pastelowy morski (nazwy funkcji)
-	string = "#c2f5e3", -- jasny zielony (ciągi znaków)
-	constant = "#ffb76b", -- jasny pomarańcz (stałe/liczby)
-	operator = "#5fdcff", -- wyrazisty błękit (operatory)
-	type = "#b3aaff", -- delikatny fiolet (typy danych)
+	-- Akcenty
+	mint_blue = "#6FE7E8", -- Kolor przewodni (nasycony miętowy błękit)
+	mint_dark = "#49C4C7", -- Ciemniejszy miętowy
+	ice_blue = "#ACFFFF", -- Intensywny lodowy błękit
+	frost_green = "#3DDCD2", -- Zielony mroźny (jasny i chłodny)
+	cyan = "#3FB8C8", -- Intensywny cyan
+
+	-- Kontrasty
+	warning = "#F2AF5F", -- Ostrzeżenie (żywy pomarańczowy kontrast)
+	error = "#F25C54", -- Błąd (mocny czerwony odcień)
+	success = "#5FF2A1", -- Sukces (jasna, nasycona zieleń)
+	info = "#3DAEEF", -- Informacja (żywy, jasny niebieski)
+
+	-- Specjalne
+	purple = "#A485F2", -- Fioletowy akcent (nasycony)
+	deep_blue = "#3B6FCC", -- Głęboki niebieski (żywy)
+	magenta = "#E08DFF", -- Magenta (intensywna)
+	pink = "#FFB8C5", -- Jasny róż (ciepły kontrast)
+	orange = "#F29367", -- Żywy pomarańczowy (lekko ciepły)
+
+	-- Gradienty
+	gradient_start = "#6FE7E8", -- Start gradientu (miętowy błękit)
+	gradient_mid = "#49C4C7", -- Środek gradientu (ciemniejszy miętowy)
+	gradient_end = "#3DDCD2", -- Koniec gradientu (zielonkawy)
 }
 return M

@@ -3,38 +3,41 @@ local M = {}
 local config = require("chillz.config")
 
 M.setup = function(colors)
-	local bg = config.transparent and "NONE" or colors.bg
-	local bg_alt = config.transparent and "NONE" or colors.bg_alt
+	local bg_color = config.transparent and "NONE" or colors.bg
 
 	return {
-		Normal = { fg = colors.fg, bg = bg },
-		NormalFloat = { fg = colors.fg_alt, bg = bg_alt },
-		Comment = { fg = colors.gray, italic = true },
-		Keyword = { fg = colors.keyword, bold = true },
-		Function = { fg = colors.function_name, bold = true },
-		Variable = { fg = colors.variable },
-		String = { fg = colors.string },
-		Constant = { fg = colors.constant },
-		Operator = { fg = colors.operator },
-		Type = { fg = colors.type },
+		-- Tło i tekst
+		Normal = { fg = colors.fg, bg = bg_color },
+		Comment = { fg = colors.fg_dim, italic = true },
+		CursorLine = { bg = colors.bg_highlight },
+		CursorLineNr = { fg = colors.mint_blue, bold = true },
+		LineNr = { fg = colors.fg_dim },
+		Visual = { bg = colors.bg_alt },
 
-		-- Treesitter
-		["@keyword"] = { fg = colors.keyword, bold = true },
-		["@function"] = { fg = colors.function_name, bold = true },
-		["@variable"] = { fg = colors.variable },
-		["@string"] = { fg = colors.string },
-		["@constant"] = { fg = colors.constant },
-		["@operator"] = { fg = colors.operator },
-		["@type"] = { fg = colors.type },
+		-- Akcenty
+		Identifier = { fg = colors.mint_blue },
+		Function = { fg = colors.ice_blue, bold = true },
+		Keyword = { fg = colors.cyan, italic = true },
+		String = { fg = colors.success },
+		Constant = { fg = colors.frost_green },
+		Type = { fg = colors.deep_blue },
+		Special = { fg = colors.purple },
+		WarningMsg = { fg = colors.warning, bold = true },
+		ErrorMsg = { fg = colors.error, bold = true },
 
-		-- LSP Semantic Highlighting
-		LspReferenceText = { bg = colors.highlight },
-		LspReferenceRead = { bg = colors.highlight },
-		LspReferenceWrite = { bg = colors.highlight },
-		DiagnosticError = { fg = colors.error },
-		DiagnosticWarn = { fg = colors.warning },
-		DiagnosticInfo = { fg = colors.info },
-		DiagnosticHint = { fg = colors.success },
+		-- Statusline i inne
+		StatusLine = { fg = colors.fg, bg = colors.bg_alt },
+		StatusLineNC = { fg = colors.fg_dim, bg = colors.bg_dim },
+		Pmenu = { fg = colors.fg, bg = colors.bg_alt },
+		PmenuSel = { fg = colors.bg, bg = colors.mint_blue },
+		TabLine = { fg = colors.fg_dim, bg = colors.bg_dim },
+		TabLineSel = { fg = colors.fg, bg = colors.bg_alt },
+
+		-- Gradient
+		DiffAdd = { fg = colors.gradient_start },
+		DiffChange = { fg = colors.gradient_mid },
+		DiffDelete = { fg = colors.error },
+		DiffText = { fg = colors.gradient_end },
 	}
 end
 
