@@ -1,29 +1,28 @@
 local M = {}
 
 M.palette = {
-	-- Główne kolory
-	bg = "#0b1724", -- bardzo ciemny granat (tło)
-	bg_alt = "#102a42", -- ciemny niebieski (sekundarne tło)
-	fg = "#d8eefe", -- jasny, lodowy błękit
-	fg_alt = "#b5d6f2", -- pastelowy błękit
-	main = "#98fbcb", -- główny kolor (miętowy błękit)
-	accent = "#58c4dd", -- jasny błękit
-	highlight = "#aef3ff", -- kontrastowy lodowy błękit
+	bg = "#06141a", -- bardzo ciemny morski granat (tło główne)
+	bg_alt = "#0b1f27", -- nieco jaśniejszy morski granat (sekundarne tło)
+	fg = "#e4f9ff", -- jasny lodowy błękit (tekst główny)
+	fg_alt = "#c7e7f5", -- pastelowy błękit (tekst pomocniczy)
+	main = "#98fbcb", -- miętowy błękit (główny akcent)
+	accent = "#59d8e0", -- jasny morski błękit (dodatkowy akcent)
+	highlight = "#aef6ff", -- świeży lodowy błękit (podświetlenia)
 
 	-- Dodatkowe kolory
-	error = "#e95678", -- różowo-czerwień
-	warning = "#ffd670", -- jasny żółty
-	info = "#6acaff", -- subtelny błękit
-	success = "#81e3a5", -- pastelowa zieleń
-	gray = "#748a98", -- neutralny szary
+	error = "#fa5f76", -- różowo-czerwień (błędy)
+	warning = "#ffd97a", -- świeży jasny żółty (ostrzeżenia)
+	info = "#70eaff", -- intensywny błękit (informacje)
+	success = "#88f4ba", -- pastelowa zieleń (sukcesy)
+	gray = "#7a9ca7", -- subtelny szary-niebieski (komentarze)
 
-	-- Nowe kolory
-	keyword = "#aad2e3", -- chłodny błękit (słowa kluczowe)
-	variable = "#f4c2c2", -- jasny róż (zmienne)
-	function_name = "#8ff0da", -- pastelowy morski (nazwy funkcji)
-	string = "#d6f5e0", -- delikatny zielony (ciągi znaków)
-	constant = "#ffae57", -- jasny pomarańcz (stałe/liczby)
-	operator = "#7ddfff", -- intensywny błękit (operatory)
-	type = "#c5a3ff", -- fioletowy (typy danych)
+	-- Nowe kolory dla lepszej różnorodności
+	keyword = "#9ce8df", -- miętowy akcent dla słów kluczowych
+	variable = "#ffc3bf", -- łagodny róż (zmienne)
+	function_name = "#7de3d3", -- pastelowy morski (nazwy funkcji)
+	string = "#c2f5e3", -- jasny zielony (ciągi znaków)
+	constant = "#ffb76b", -- jasny pomarańcz (stałe/liczby)
+	operator = "#5fdcff", -- wyrazisty błękit (operatory)
+	type = "#b3aaff", -- delikatny fiolet (typy danych)
 }
 return M
