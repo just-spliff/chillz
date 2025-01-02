@@ -5,7 +5,7 @@ M.setup = function(colors)
 		DashboardHeader = { fg = colors.mint_blue }, -- Kolor nagłówka
 		DashboardCenter = { fg = colors.green }, -- Kolor przycisków w centrum
 		DashboardShortcut = { fg = colors.teal }, -- Kolor skrótów
-		DashboardFooter = { fg = colors.blue, style = { "italic" } }, -- Kolor stopki
+		DashboardFooter = { fg = colors.blue, italic = true }, -- Kolor stopki
 	}
 end
 
