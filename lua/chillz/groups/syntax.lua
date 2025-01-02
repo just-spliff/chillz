@@ -52,6 +52,9 @@ M.setup = function(colors)
 		Keyword = { fg = colors.magenta_dark },
 		Exception = { fg = colors.purple_dark },
 
+		Term = { fg = colors.fg, bg = colors.bg_dark },
+		NormalFloat = { bg = colors.bg_alt },
+
 		-- Preprocessor
 		PreProc = { fg = colors.yellow },
 		Include = { fg = colors.mint_blue },
