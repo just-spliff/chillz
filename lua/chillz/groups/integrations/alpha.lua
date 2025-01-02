@@ -7,7 +7,7 @@ M.setup = function(colors)
 		AlphaHeader = { fg = colors.mint_blue }, -- Primary mint blue for headers
 		AlphaHeaderLabel = { fg = colors.teal }, -- Teal for header labels
 		AlphaButtons = { fg = colors.blue }, -- Bright blue for buttons
-		AlphaFooter = { fg = colors.cyan, style = { "italic" } }, -- Cyan for footer with italic style
+		AlphaFooter = { fg = colors.cyan, italic = true }, -- Cyan for footer with italic style
 	}
 end
 

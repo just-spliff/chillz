@@ -4,12 +4,12 @@ local M = {}
 M.setup = function(opts)
 	opts = opts or {}
 
-	-- Wczytaj kolory i grupy highlight
+	-- Load colors and highlight groups
 	local colors = require("chillz.colors").palette
 	local highlights = require("chillz.groups.syntax").setup(colors)
 	local alpha = require("chillz.groups.integrations.alpha").setup(colors)
 
-	-- Zastosuj highlighty
+	-- Apply highlight groups
 	for group, settings in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, settings)
 	end
@@ -18,7 +18,7 @@ M.setup = function(opts)
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 
-	-- Zastosuj opcje konfiguracyjne (opcjonalnie)
+	-- Apply configuration options (optional)
 	require("chillz.config").apply(opts)
 	require("chillz.groups.integrations.treesitter")
 
