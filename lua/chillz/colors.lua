@@ -22,13 +22,13 @@ M.palette = {
 	teal = "#3DDCD2", -- Teal
 	green = "#47FF9C", -- Bright green
 	green_dark = "#3AD69C", -- Darker green
-	yellow = "#A3D6B4", -- Soft greenish-yellow (replacing yellow-orange)
+	yellow = "#FF6700", -- Soft greenish-yellow (replacing yellow-orange)
 
 	-- Purples and Blues
-	purple = "#9A7BDB", -- Muted purple
-	purple_dark = "#7A5CA8", -- Darker purple
-	magenta = "#B785F2", -- Soft magenta
-	magenta_dark = "#8C6FB5", -- Dark magenta
+	purple = "#C583ED", -- Muted purple
+	purple_dark = "#AE59D3", -- Darker purple
+	magenta = "#E096F9", -- Soft magenta
+	magenta_dark = "#BB6CDA", -- Dark magenta
 	blue = "#6FE7E8", -- Bright blue
 	blue_light = "#ACFFFF", -- Lighter blue
 	blue_dark = "#49C4C7", -- Darker blue
