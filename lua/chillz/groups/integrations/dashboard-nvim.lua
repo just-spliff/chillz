@@ -6,6 +6,7 @@ M.setup = function(colors)
 		DashboardCenter = { fg = colors.green }, -- Kolor przycisków w centrum
 		DashboardShortcut = { fg = colors.teal }, -- Kolor skrótów
 		DashboardFooter = { fg = colors.blue, italic = true }, -- Kolor stopki
+		DashboardDesc = { fg = colors.gree },
 	}
 end
 
