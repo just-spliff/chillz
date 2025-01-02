@@ -37,7 +37,7 @@ M.palette = {
 
 	-- Neutrals
 	comment = "#5F8A8E", -- Neutral gray (for comments)
-	terminal_black = "#01191E", -- Black (for terminal backgrounds)
+	terminal_black = "#011423", -- Black (for terminal backgrounds)
 }
 
 return M
