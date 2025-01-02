@@ -13,10 +13,15 @@ M.setup = function(opts)
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 
+	-- Zastosuj highlighty dla alpha-nvim
+	local alpha_highlights = require("chillz.groups.integrations.alpha").get(colors)
+	for group, settings in pairs(alpha_highlights) do
+		vim.api.nvim_set_hl(0, group, settings)
+	end
+
 	-- Zastosuj opcje konfiguracyjne (opcjonalnie)
 	require("chillz.config").apply(opts)
 	require("chillz.groups.integrations.treesitter")
-	require("chillz.groups.integrations.alpha")
 
 	config.apply_transparency()
 end
