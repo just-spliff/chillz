@@ -60,16 +60,18 @@ function M.setup()
 		["@number.float"] = { fg = colors.mint_blue },
 		["@number.integer"] = { fg = colors.green_dark },
 
-		-- Tags (JSX/HTML)
+		-- Tags (TypeScript/JSX)
 		["@tag"] = { fg = colors.mint_blue, bold = true }, -- tag name, e.g. <div>
 		["@tag.delimiter"] = { fg = colors.blue_light }, -- tag delimiters, e.g. < and >
+
+		-- Atrybuty tagów
 		["@tag.attribute"] = { fg = colors.blue_dark }, -- tag attributes like className, etc.
 
-		-- className (JSX)
-		["@tag.attribute.class"] = { fg = colors.teal, italic = true }, -- specific color for className
+		-- className (TSX)
+		["@tag.attribute.className"] = { fg = colors.teal, italic = true }, -- specific color for className
 		["@tag.attribute.id"] = { fg = colors.green_dark }, -- specific color for id attributes
 
-		-- Attribute values
+		-- Atrybuty wartości
 		["@attribute"] = { fg = colors.blue_dim },
 
 		-- Namespace
@@ -98,6 +100,10 @@ function M.setup()
 		-- Special
 		["@special"] = { fg = colors.yellow, italic = true },
 		["@special.function"] = { fg = colors.mint_blue_dark, italic = true },
+
+		-- TypeScript specific keywords
+		["@type.qualifier"] = { fg = colors.blue_light }, -- TypeScript-specific qualifiers (e.g., `readonly`)
+		["@variable.ts"] = { fg = colors.green_dark }, -- For TypeScript variables
 	}
 end
 
