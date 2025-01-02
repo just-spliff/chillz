@@ -60,11 +60,17 @@ function M.setup()
 		["@number.float"] = { fg = colors.mint_blue },
 		["@number.integer"] = { fg = colors.green_dark },
 
-		-- Tags and attributes (JSX/HTML)
-		["@tag"] = { fg = colors.mint_blue },
-		["@tag.attribute"] = { fg = colors.blue_dim, italic = true },
-		["@attribute"] = { fg = colors.blue_dark, italic = true },
-		["@tag.delimiter"] = { fg = colors.mint_blue_dark },
+		-- Tags (JSX/HTML)
+		["@tag"] = { fg = colors.mint_blue, bold = true }, -- tag name, e.g. <div>
+		["@tag.delimiter"] = { fg = colors.blue_light }, -- tag delimiters, e.g. < and >
+		["@tag.attribute"] = { fg = colors.blue_dark }, -- tag attributes like className, etc.
+
+		-- className (JSX)
+		["@tag.attribute.class"] = { fg = colors.teal, italic = true }, -- specific color for className
+		["@tag.attribute.id"] = { fg = colors.green_dark }, -- specific color for id attributes
+
+		-- Attribute values
+		["@attribute"] = { fg = colors.blue_dim },
 
 		-- Namespace
 		["@namespace"] = { fg = colors.purple },
