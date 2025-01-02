@@ -1,14 +1,16 @@
 local M = {}
 
-M.setup = function(colors)
+function M.get()
+	-- Import the palette
+	local palette = require("chillz.colors").palette
+
 	return {
-		-- Dashboard Header
-		AlphaHeader = { fg = colors.mint_blue, bold = true },
-		AlphaFooter = { fg = colors.comment, italic = true },
-		AlphaButtons = { fg = colors.green, bg = colors.bg_highlight },
-		AlphaShortcut = { fg = colors.purple_dark, italic = true },
-		AlphaHighlight = { fg = colors.teal, bold = true },
-		AlphaBorder = { fg = colors.bg_dim, bg = colors.bg },
+		-- Highlight groups for Alpha
+		AlphaShortcut = { fg = palette.green }, -- Bright green for shortcuts
+		AlphaHeader = { fg = palette.mint_blue }, -- Primary accent for headers
+		AlphaHeaderLabel = { fg = palette.teal }, -- Teal for header labels
+		AlphaButtons = { fg = palette.blue }, -- Bright blue for buttons
+		AlphaFooter = { fg = palette.cyan, style = { "italic" } }, -- Cyan for footer with italic style
 	}
 end
 
