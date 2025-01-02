@@ -7,14 +7,14 @@ M.setup = function(opts)
 	-- Load colors and highlight groups
 	local colors = require("chillz.colors").palette
 	local highlights = require("chillz.groups.syntax").setup(colors)
-	local alpha = require("chillz.groups.integrations.alpha").setup(colors)
+	local dashboard = require("chillz.groups.integrations.dashboard-nvim").setup(colors)
 
 	-- Apply highlight groups
 	for group, settings in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 
-	for group, settings in pairs(alpha) do
+	for group, settings in pairs(dashboard) do
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 
