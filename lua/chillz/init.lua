@@ -1,3 +1,4 @@
+local config = require("chillz.config")
 local M = {}
 
 M.setup = function(opts)
@@ -6,15 +7,14 @@ M.setup = function(opts)
 	-- Wczytaj kolory i grupy highlight
 	local colors = require("chillz.colors").palette
 	local highlights = require("chillz.groups.syntax").setup(colors)
-	local alpha_integration = require("chillz.groups.integrations.alpha").setup(colors)
+	local alpha = require("chillz.groups.integrations.alpha").setup(colors)
 
 	-- Zastosuj highlighty
 	for group, settings in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 
-	-- Zastosuj integracje z alpha-nvim
-	for group, settings in pairs(alpha_integration) do
+	for group, settings in pairs(alpha) do
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 
@@ -24,3 +24,5 @@ M.setup = function(opts)
 
 	config.apply_transparency()
 end
+
+return M
