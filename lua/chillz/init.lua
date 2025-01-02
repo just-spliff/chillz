@@ -6,7 +6,7 @@ M.setup = function(opts)
 
 	-- Wczytaj kolory i grupy highlight
 	local colors = require("chillz.colors").palette
-	local highlights = require("chillz.highlights").setup(colors)
+	local highlights = require("chillz.groups.syntax").setup(colors)
 
 	-- Zastosuj highlighty
 	for group, settings in pairs(highlights) do
