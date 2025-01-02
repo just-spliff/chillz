@@ -1,13 +1,14 @@
-local colors = require("chillz.colors").palette
-
 local M = {}
 
-function M.setup()
+M.setup = function(colors)
 	return {
-		AlphaHeader = { fg = colors.mint_blue, style = "bold" },
-		AlphaButtons = { fg = colors.blue_dim, style = "italic" },
-		AlphaShortcut = { fg = colors.teal, style = "bold" },
-		AlphaFooter = { fg = colors.green, style = "italic" },
+		-- Dashboard Header
+		AlphaHeader = { fg = colors.mint_blue, bold = true },
+		AlphaFooter = { fg = colors.comment, italic = true },
+		AlphaButtons = { fg = colors.green, bg = colors.bg_highlight },
+		AlphaShortcut = { fg = colors.purple_dark, italic = true },
+		AlphaHighlight = { fg = colors.teal, bold = true },
+		AlphaBorder = { fg = colors.bg_dim, bg = colors.bg },
 	}
 end
 
