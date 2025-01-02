@@ -22,7 +22,13 @@ M.palette = {
 	teal = "#3DDCD2", -- Teal
 	green = "#47FF9C", -- Bright green
 	green_dark = "#3AD69C", -- Darker green
-	yellow = "#FF6700", -- Soft greenish-yellow (replacing yellow-orange)
+	yellow = "#F8C86B", -- Strong yellow-orange with a cool undertone (new warm accent)
+	amber = "#F2A900", -- Warm amber (a more intense yellow-orange)
+	sunset_pink = "#FF6F91", -- Soft pinkish-red for a warm contrast
+	lavender = "#B4A7D6", -- Muted lavender with a cool base
+	teal_dark = "#237D7C", -- Deeper teal for a more grounded, dark accent
+	sky_blue = "#89CFF0", -- Soft sky blue to complement the icy tones
+	periwinkle = "#8C9EFF", -- Light periwinkle blue with a touch of purple
 
 	-- Purples and Blues
 	purple = "#C583ED", -- Muted purple
@@ -35,9 +41,7 @@ M.palette = {
 	blue_dim = "#3FB8C8", -- Dimmed blue
 	blue_gutter = "#214657", -- Gutter blue
 
-	-- Neutrals
 	comment = "#5F8A8E", -- Neutral gray (for comments)
-	terminal_black = "#011423", -- Black (for terminal backgrounds)
 }
 
 return M
